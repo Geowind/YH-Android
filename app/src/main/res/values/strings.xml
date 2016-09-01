@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">永辉生意人</string>
+    <string name="title_activity_main">永辉生意人</string>
+
+    <string name="image_error">错误</string>
+    <string name="cansel">取消</string>
+    <string name="passcode_lock">启用锁屏</string>
+    <string name="passcode_set">锁屏设置</string>
+    <string name="passcode_defalt_text">请输入密码</string>
+    <string name="passcode_input">已锁屏</string>
+    <string name="passcode_input_sub">请输入密码</string>
+    <string name="zero">0</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+    <string name="period">.</string>
+    <string name="text_login">登录</string>
+    <string name="text_input_password">请输入密码</string>
+    <string name="text_input_username">请输入账号</string>
+    <string name="text_logo_title">融合共享，成于至善</string>
+    <string name="text_dashboard">仪表盘</string>
+    <string name="text_analysis">分析</string>
+    <string name="text_app">应用</string>
+    <string name="text_message">消息</string>
+    <string name="text_scan">扫一扫</string>
+    <string name="text_search">搜索</string>
+    <string name="text_user_info">个人信息</string>
+    <string name="text_voice">语音播报</string>
+    <string name="text_guide_click">立即尝试 传真</string>
+</resources>

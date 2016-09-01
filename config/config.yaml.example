@@ -1,0 +1,108 @@
+pgyer: &pgyer
+  user_key: '-'
+  api_key: '-'
+yonghui:
+  application_id: 'com.intfocus.-'
+  display_status:
+    tab_bar: 1
+    kpi: 1
+    analyse: 1
+    app: 1
+    message: 1
+    comment: 1
+    share: 1
+  key_store:
+    path: 'key-store/yh.jks'
+    password: '-'
+    alias: '-'
+    alias_password: '-'
+  server: 'http://yonghui.idata.mobi'
+  pgyer:
+    ios: '-'
+    android: '-'
+    <<: *pgyer
+  umeng: 
+    ios: 
+      app_key: '-'
+      app_master_secret: '-'
+    android: 
+      app_key: '-'
+      umeng_message_secret: '-'
+      app_master_secret: '-'
+  umeng_weixin:
+    ios:
+      app_id: '-'
+      app_secret: '-'
+    android:
+      app_id: '-'
+      app_secret: '-'
+shengyiplus:
+  application_id: 'com.intfocus.-'
+  display_status:
+    tab_bar: 1
+    kpi: 1
+    analyse: 1
+    app: 1
+    message: 1
+    comment: 1
+    share: 1
+  key_store:
+    path: 'key-store/-.jks'
+    password: '123456'
+    alias: '-'
+    alias_password: '-'
+  server: 'http://-.com'
+  pgyer:
+    ios: '-'
+    android: '-'
+    <<: *pgyer
+  umeng: 
+    ios: 
+      app_key: '-'
+      app_master_secret: '-'
+    android: 
+      app_key: '-'
+      umeng_message_secret: '-'
+      app_master_secret: '-'
+  umeng_weixin:
+    ios:
+      app_id: '-'
+      app_secret: '-'
+    android:
+      app_id: '-'
+      app_secret: '-'
+qiyoutong:
+  application_id: 'com.intfocus.-'
+  display_status:
+    tab_bar: 0
+    kpi: 1
+    analyse: 0
+    app: 0
+    message: 0
+    comment: 0
+    share: 1
+  key_store:
+    path: 'key-store/qiyoutong.jks'
+    password: '-'
+    alias: '-'
+    alias_password: '-'
+  server: 'http://qiyoutong.shengyiplus.com'
+  pgyer:
+    ios: '-'
+    android: '-'
+    <<: *pgyer
+  umeng: 
+    ios: 
+      app_key: '-'
+      app_master_secret: '-'
+    android: 
+      app_key: '-'
+      umeng_message_secret: '-'
+      app_master_secret: '-'
+  umeng_weixin:
+    ios:
+      app_id: '-'
+      app_secret: '-'
+    android:
+      app_id: '-'
+      app_secret: '-'
