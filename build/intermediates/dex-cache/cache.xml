@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="6cbc7773921fcfedbe55657578f0cbfe614778dc">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.1.1_ce2e97ad235fad6f4b68ab84ffe045464853c1d1.jar" />
+    </item>
+    <item
+        jar="D:\androidstudiosdk\extras\android\m2repository\com\android\support\support-annotations\23.1.1\support-annotations-23.1.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="8d680ba5a623724d1fb0e81c36a790f023a6cede">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\support-annotations-23.1.1_6d179859d295b20d5f4868255316a59e13b2a87e.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.haha\haha\1.1\b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635\haha-1.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="b7b2e61ee1ad2d1ac6ae3122de9c940fb0d0e635">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\haha-1.1_0a2220b0ef8ca315dde0f9e428f548e945740b64.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.pgyersdk\sdk\2.2.2\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="9d257f78eb7f532da7850ccaf1b14555221ab8b0">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.pgyersdk-sdk-2.2.2_da4fbece7ec05a0cde58dfb4459f9848905a427e.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.wire\wire-runtime\1.7.0\99b61fbfbd9ae5d5309bb4a618e1f2d875821e2c\wire-runtime-1.7.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="99b61fbfbd9ae5d5309bb4a618e1f2d875821e2c">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\wire-runtime-1.7.0_5fd04836dba8fdd6df98e97348fce60944396479.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\core\1.8.4\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-core-1.8.4_0ec6cb4050ee3a40efbbea7751b647e07a2f4eec.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zbar\1.8.4\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="535ee75e6cf4460071fdddd93eb1101e4281294f">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\me.dm7.barcodescanner-zbar-1.8.4_d1b2ee37794eae602426d28b15827fc28e7f92ca.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="448238bf893d6fa0d0ce54c3fd9408805a41e7a4">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\instant-run_e0687fc8f9a3791d9a555ad0197cf5d59e100568.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\commons-io\commons-io\2.5\2852e6e05fbb95076fc091f6d1780f1f8fe35e0f\commons-io-2.5.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="2852e6e05fbb95076fc091f6d1780f1f8fe35e0f">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\commons-io-2.5_999a3c14f8f3b653b72a8ff16f2fb991b4d0faaf.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\libs\android-viewbadger.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f1303b50d535716ca7601c5014357b8435658313">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\android-viewbadger_83414eb514f5ea5b5891913f6a585905f38b05c8.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\me.dm7.barcodescanner\zbar\1.8.4\jars\libs\zbar.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="6b963fd8297b9b963fbb0afb0b18a11ed9044f78">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\zbar_607ac69188f03f339708f7de82f035b583162497.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-watcher\1.3\632482a61ad24b7ec864072945d221369f9a606\leakcanary-watcher-1.3.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="0632482a61ad24b7ec864072945d221369f9a606">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\leakcanary-watcher-1.3_41a6e5a50f31326802a2f542dd6b558d85832968.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="080278ceabe22080831b42acfa110ff7282c8de2">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\instant-run-bootstrap_e5c97651ffee186aef3db984222039af65ba8b0a.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.okhttp3\okhttp\3.2.0\f7873a2ebde246a45c2a8d6f3247108b4c88a879\okhttp-3.2.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f7873a2ebde246a45c2a8d6f3247108b4c88a879">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\okhttp-3.2.0_bc77b8728cf2100214b3d487673303c3fcb7e4ae.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.leakcanary\leakcanary-analyzer\1.3\c5399b18a672f7973c8a9b9d6b731a3a36e590cc\leakcanary-analyzer-1.3.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="c5399b18a672f7973c8a9b9d6b731a3a36e590cc">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\leakcanary-analyzer-1.3_30094657e319fb2ef9b8c19bc17253275715f784.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\YH-Android\umeng-push\unspecified\jars\libs\com.umeng.message_v2.8.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="70bbd143dee30273e75c221de8903a6b8b527db3">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.umeng.message_v2.8.0_308f73813fd1442f4927d4813c57b70a6f7bfc76.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.github.moduth\blockcanary-android\1.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="3d4d757701b1b9de625c480d72b516f7d5e89c15">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.github.moduth-blockcanary-android-1.2.1_74ffe30cc02eca92158184dcd7488d6a2ba18584.jar" />
+    </item>
+    <item
+        jar="C:\Users\40284\.gradle\caches\modules-2\files-2.1\com.squareup.okio\okio\1.6.0\98476622f10715998eacf9240d6b479f12c66143\okio-1.6.0.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="98476622f10715998eacf9240d6b479f12c66143">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\okio-1.6.0_a517147bc792015c4dc82fe2be029a5b87fd2a46.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.github.moduth\blockcanary-core\1.2.1\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="00a4974f626569eeb6d84f0adb3f8d247f3b6a52">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.github.moduth-blockcanary-core-1.2.1_42b7a2420fcdeea72938e2deb3a052ac9cb6488b.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\22.1.0\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="983e2f375504bc04def18e709c35192afe92e65f">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-22.1.0_4b3ef58fece8f55b3797a13383f0d0e9b6ad6ed6.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.1.1\jars\libs\internal_impl-23.1.1.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="a4de9c81ae239414e1ed0f86441b02abaf29bca9">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\internal_impl-23.1.1_238692e8bf92cebe957e9ea018c82f94d156b050.jar" />
+    </item>
+    <item
+        jar="E:\intfocus\YH-Android\app\build\intermediates\exploded-aar\com.squareup.leakcanary\leakcanary-android\1.3\jars\classes.jar"
+        jumboMode="true"
+        revision="22.0.1"
+        sha1="f4e7adebf49e683db82fb6efac2caaf3d768b8d4">
+        <dex dex="E:\intfocus\YH-Android\app\build\intermediates\pre-dexed\debug\com.squareup.leakcanary-leakcanary-android-1.3_15319c635d6d7755e51abdf89cbdc5cf4f074926.jar" />
+    </item>
+
+</items>

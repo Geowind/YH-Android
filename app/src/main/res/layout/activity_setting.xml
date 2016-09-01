@@ -266,13 +266,21 @@
 
             <TextView
                 style="@style/SettingTitle"
+<<<<<<< HEAD
                 android:text="配色主题" />
+=======
+                android:text="测试功能" />
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
             <RelativeLayout style="@style/SettingGroup">
 
                 <TextView
                     style="@style/SettingKey"
+<<<<<<< HEAD
                     android:text="旧版UI" />
+=======
+                    android:text="新版UI" />
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
                 <Switch
                     android:id="@+id/ui_switch"

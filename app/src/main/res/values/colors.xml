@@ -3,7 +3,11 @@
     <color name="divider">#66898989</color>
     <color name="black_overlay">#66000000</color>
 
+<<<<<<< HEAD
     <color name="actionBar">#31809f</color>
+=======
+    <color name="actionBar">#53a93f</color>
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
     <color name="colors0">#ffffff</color>
     <color name="colors1">#ffcd0a</color>
@@ -37,6 +41,14 @@
     <color name="magenta">#FF00FF</color>
     <color name="pink">#FFC0CB</color>
 
+<<<<<<< HEAD
+=======
+    <color name="guide_big_tv_color">#31809f</color>
+    <color name="guide_small_tv_color">#4c8ba7</color>
+
+    <color name="click_text_color">#323232</color>
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     <color name="pass_number">#000000</color>
 
 </resources>

@@ -29,7 +29,13 @@ public class ApiHelper {
      * params: {device: {name, platform, os, os_version, uuid}}
      */
     public static String authentication(Context context, String username, String password) {
+<<<<<<< HEAD
         String responseState = "success", urlString = String.format(URLs.API_USER_PATH, URLs.kBaseUrl, "android", username, password);
+=======
+        String ret = "success", urlString = String.format(URLs.API_USER_PATH, URLs.kBaseUrl,
+                "android",
+                username, password);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         try {
             JSONObject device = new JSONObject();
             device.put("name", android.os.Build.MODEL);
@@ -44,7 +50,14 @@ public class ApiHelper {
             params.put("app_version", String.format("a%s", packageInfo.versionName));
             Log.i("DeviceParams", params.toString());
 
+<<<<<<< HEAD
             Map<String, String> response = HttpUtil.httpPost(urlString, params);
+=======
+
+            Map<String, String> response = HttpUtil.httpPost(urlString, params);
+            Log.d("code", response.get("code"));
+            Log.d("body", response.get("body"));
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             String userConfigPath = String.format("%s/%s", FileUtil.basePath(context), URLs.USER_CONFIG_FILENAME);
             JSONObject userJSON = FileUtil.readConfigFile(userConfigPath);
             userJSON.put("password", password);
@@ -89,6 +102,7 @@ public class ApiHelper {
 
                 FileUtil.writeFile(settingsConfigPath, userJSON.toString());
             } else {
+<<<<<<< HEAD
                 responseState = responseJSON.getString("info");
             }
         } catch (Exception e) {
@@ -96,6 +110,15 @@ public class ApiHelper {
             responseState = e.getMessage();
         }
         return responseState;
+=======
+                ret = responseJSON.getString("info");
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            ret = e.getMessage();
+        }
+        return ret;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     /*
@@ -117,7 +140,11 @@ public class ApiHelper {
 
                 String searchItemsPath = String.format("%s.search_items", javascriptPath);
                 File searchItemsFile = new File(searchItemsPath);
+<<<<<<< HEAD
                 if(searchItemsFile.exists()) {
+=======
+                if (searchItemsFile.exists()) {
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                     searchItemsFile.delete();
                 }
             } catch (IOException e) {
@@ -133,7 +160,11 @@ public class ApiHelper {
      */
     public static void writeComment(int userID, int objectType, int objectID, Map params) throws UnsupportedEncodingException {
         String urlString = String.format(URLs.API_COMMENT_PATH, URLs.kBaseUrl, userID, objectID,
+<<<<<<< HEAD
             objectType);
+=======
+                objectType);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
         Map<String, String> response = HttpUtil.httpPost(urlString, params);
         Log.i("WriteComment", response.get("code"));
@@ -220,7 +251,11 @@ public class ApiHelper {
     /**
      * 从缓存头文件中，获取指定链接的ETag/Last-Modified
      *
+<<<<<<< HEAD
      * @param urlKey 链接
+=======
+     * @param urlKey     链接
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @param assetsPath 缓存头文件相对文件夹
      */
     private static Map<String, String> checkResponseHeader(String urlKey, String assetsPath) {
@@ -230,6 +265,10 @@ public class ApiHelper {
             JSONObject headersJSON = new JSONObject();
 
             String headersFilePath = String.format("%s/%s", assetsPath, URLs.CACHED_HEADER_FILENAME);
+<<<<<<< HEAD
+=======
+            Log.i("path",headersFilePath);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             if ((new File(headersFilePath)).exists()) {
                 headersJSON = FileUtil.readConfigFile(headersFilePath);
             }
@@ -255,9 +294,15 @@ public class ApiHelper {
     /**
      * 把服务器响应的ETag/Last-Modified存入本地
      *
+<<<<<<< HEAD
      * @param urlKey 链接
      * @param assetsPath 缓存头文件相对文件夹
      * @param response 服务器响应的ETag/Last-Modifiede
+=======
+     * @param urlKey     链接
+     * @param assetsPath 缓存头文件相对文件夹
+     * @param response   服务器响应的ETag/Last-Modifiede
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      */
     private static void storeResponseHeader(String urlKey, String assetsPath, Map<String, String> response) {
         try {
@@ -287,7 +332,11 @@ public class ApiHelper {
     /**
      * 合并两个JSONObject
      *
+<<<<<<< HEAD
      * @param obj JSONObject
+=======
+     * @param obj   JSONObject
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @param other JSONObject
      * @return 合并后的JSONObject
      */
@@ -308,8 +357,13 @@ public class ApiHelper {
     /**
      * 下载文件
      *
+<<<<<<< HEAD
      * @param context 上下文
      * @param urlString 下载链接
+=======
+     * @param context    上下文
+     * @param urlString  下载链接
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @param outputFile 写入本地文件路径
      */
     public static void downloadFile(Context context, String urlString, File outputFile) {
@@ -356,7 +410,11 @@ public class ApiHelper {
      *
      * @param deviceID 设备标识
      * @param password 锁屏密码
+<<<<<<< HEAD
      * @param state 是否启用锁屏
+=======
+     * @param state    是否启用锁屏
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      */
     public static void screenLock(String deviceID, String password, boolean state) {
         String urlString = String.format(URLs.API_SCREEN_LOCK_PATH, URLs.kBaseUrl, deviceID);
@@ -373,7 +431,11 @@ public class ApiHelper {
      * 上传用户行为
      *
      * @param context 上下文
+<<<<<<< HEAD
      * @param param 用户行为
+=======
+     * @param param   用户行为
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      */
     public static void actionLog(Context context, JSONObject param) {
         try {
@@ -403,28 +465,48 @@ public class ApiHelper {
     }
 
     /**
+<<<<<<< HEAD
      *  消息推送， 设备标识
      *
      *  @param deviceUUID  设备ID
      *
      *  @return 服务器是否更新成功
+=======
+     * 消息推送， 设备标识
+     *
+     * @param deviceUUID 设备ID
+     * @return 服务器是否更新成功
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      */
     public static boolean pushDeviceToken(Context context, String deviceUUID) {
         try {
             String pushConfigPath = String.format("%s/%s", FileUtil.basePath(context), URLs.PUSH_CONFIG_FILENAME);
             JSONObject pushJSON = FileUtil.readConfigFile(pushConfigPath);
 
+<<<<<<< HEAD
             if(pushJSON.has("push_valid") && pushJSON.getBoolean("push_valid") && pushJSON.has("push_device_token") && pushJSON
                 .getString("push_device_token").length() == 44) return true;
             if(pushJSON.has("push_device_token") && pushJSON.getString("push_device_token").length() != 44) return false;
 
             if(pushJSON.has("push_device_token")) {
+=======
+            if (pushJSON.has("push_valid") && pushJSON.getBoolean("push_valid") && pushJSON.has("push_device_token") && pushJSON
+                    .getString("push_device_token").length() == 44) return true;
+            if (pushJSON.has("push_device_token") && pushJSON.getString("push_device_token").length() != 44)
+                return false;
+
+            if (pushJSON.has("push_device_token")) {
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                 String urlString = String.format(URLs.API_PUSH_DEVICE_TOKEN_PATH, URLs.kBaseUrl, deviceUUID, pushJSON.getString("push_device_token"));
                 Map<String, String> response = HttpUtil.httpPost(urlString, new JSONObject());
                 JSONObject responseJSON = new JSONObject(response.get("body"));
 
                 pushJSON.put("push_valid",
+<<<<<<< HEAD
                     responseJSON.has("valid") && responseJSON.getBoolean("valid"));
+=======
+                        responseJSON.has("valid") && responseJSON.getBoolean("valid"));
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                 FileUtil.writeFile(pushConfigPath, pushJSON.toString());
 
                 return pushJSON.has("push_valid") && pushJSON.getBoolean("push_valid");
@@ -440,6 +522,7 @@ public class ApiHelper {
     }
 
     /**
+<<<<<<< HEAD
      *  二维码扫描
      *
      *  @param groupID    群组ID
@@ -450,11 +533,21 @@ public class ApiHelper {
      *  @param codeType   条形码或二维码
      */
     public static void barCodeScan(Context mContext, String groupID, String roleID, String userNum, String storeID, String codeInfo, String codeType) {
+=======
+     * 二维码扫描
+     *
+     * @param userNum  用户编号
+     * @param codeInfo 条形码信息
+     * @param codeType 条形码或二维码
+     */
+    public static void barCodeScan(Context mContext, String groupID, String roleID, String userNum, String codeInfo, String codeType) {
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         try {
             JSONObject params = new JSONObject();
             params.put("code_info", codeInfo);
             params.put("code_type", codeType);
 
+<<<<<<< HEAD
             String urlString = String.format(URLs.API_BARCODE_SCAN_PATH, URLs.kBaseUrl, groupID, roleID, userNum, storeID, codeInfo, codeType);
             Map<String, String> response = HttpUtil.httpGet(urlString, new HashMap());
             // Map<String, String> response = HttpUtil.httpPost(urlString, params);
@@ -466,6 +559,18 @@ public class ApiHelper {
 
             FileUtil.barCodeScanResult(mContext, responseString);
         } catch(JSONException e) {
+=======
+            String urlString = String.format(URLs.API_BARCODE_SCAN_PATH, URLs.kBaseUrl, groupID, roleID, userNum);
+            Map<String, String> response = HttpUtil.httpPost(urlString, params);
+            String responseString = response.get("body");
+
+            if (response.get("code") == null || !response.get("code").equals("200")) {
+                responseString = String.format("{\"商品编号\": \"%s\",  \"状态\": \"%s\", \"order_keys\": [\"商品编号\",  \"状态\"]}", codeInfo, responseString);
+            }
+
+            FileUtil.barCodeScanResult(mContext, responseString);
+        } catch (JSONException e) {
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             e.printStackTrace();
         }
     }

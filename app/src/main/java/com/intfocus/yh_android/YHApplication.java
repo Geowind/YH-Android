@@ -10,17 +10,38 @@ import android.content.IntentFilter;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.Build;
+<<<<<<< HEAD
 import android.util.Log;
 
 import com.intfocus.yh_android.screen_lock.ConfirmPassCodeActivity;
 import com.intfocus.yh_android.util.FileUtil;
+=======
+import android.os.Handler;
+import android.util.Log;
+
+import com.github.moduth.blockcanary.BlockCanary;
+import com.intfocus.yh_android.screen_lock.ConfirmPassCodeActivity;
+import com.intfocus.yh_android.util.FileUtil;
+import com.intfocus.yh_android.util.LogUtil;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import com.intfocus.yh_android.util.URLs;
 import com.pgyersdk.crash.PgyCrashManager;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
+<<<<<<< HEAD
 import com.umeng.socialize.PlatformConfig;
 
 import org.OpenUDID.OpenUDID_manager;
+=======
+import com.umeng.message.IUmengRegisterCallback;
+import com.umeng.message.PushAgent;
+import com.umeng.message.UmengNotificationClickHandler;
+import com.umeng.message.entity.UMessage;
+
+import org.OpenUDID.OpenUDID_manager;
+import org.json.JSONException;
+import org.json.JSONObject;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 import java.io.File;
 import java.io.IOException;
@@ -31,6 +52,10 @@ import java.io.IOException;
 public class YHApplication extends Application {
     private Context mContext;
     private RefWatcher refWatcher;
+<<<<<<< HEAD
+=======
+    private static YHApplication instance;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
     /*
      *  手机待机再激活时发送解屏广播
@@ -43,6 +68,7 @@ public class YHApplication extends Application {
             if(!intent.getAction().equals(Intent.ACTION_SCREEN_ON)) return;
             Log.i("BroadcastReceiver", "Screen On");
 
+<<<<<<< HEAD
             String currentActivityName = null;
             Activity currentActivity = ((YHApplication)context.getApplicationContext()).getCurrentActivity();
             if(currentActivity != null) {
@@ -53,6 +79,14 @@ public class YHApplication extends Application {
                 catch(NoSuchMethodError e) {
                     e.printStackTrace();;
                 }
+=======
+
+            String currentActivityName = null;
+            Activity currentActivity = ((YHApplication)context.getApplicationContext()).getCurrentActivity();
+            if(currentActivity != null) {
+                currentActivityName = currentActivity.getClass().getSimpleName();
+                Log.i("currentActivityName", currentActivityName.trim().equals("ConfirmPassCodeActivity") ? "YES" : "NO");
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             }
             Log.i("currentActivityName", "[" + currentActivityName + "]");
             if ((currentActivityName != null && !currentActivityName.trim().equals("ConfirmPassCodeActivity")) && // 当前活动的Activity非解锁界面
@@ -74,11 +108,14 @@ public class YHApplication extends Application {
         String sharedPath = FileUtil.sharedPath(mContext), basePath = FileUtil.basePath(mContext);
 
         /*
+<<<<<<< HEAD
          * 微信平台验证
          */
         PlatformConfig.setWeixin("wxcff211a335b17088", "af964fd476b59bf54682bb15f23a0569");
 
         /*
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
          *  蒲公英平台，收集闪退日志
          */
         PgyCrashManager.register(this);
@@ -113,6 +150,10 @@ public class YHApplication extends Application {
         FileUtil.checkAssets(mContext, "stylesheets", true);
         FileUtil.checkAssets(mContext, "javascripts", true);
         FileUtil.checkAssets(mContext, "BarCodeScan", false);
+<<<<<<< HEAD
+=======
+        FileUtil.checkAssets(mContext, "advertisement", false);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
         /*
          *  手机待机再激活时发送开屏广播
@@ -124,8 +165,84 @@ public class YHApplication extends Application {
          *  监测内存泄漏
          */
         refWatcher = LeakCanary.install(this);
+<<<<<<< HEAD
     }
 
+=======
+        BlockCanary.install(this, new AppBlockCanaryContext()).start();
+
+        PushAgent mPushAgent = PushAgent.getInstance(mContext);
+        //开启推送并设置注册的回调处理
+        mPushAgent.enable(new IUmengRegisterCallback() {
+            @Override
+            public void onRegistered(final String registrationId) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            if(mContext == null) {
+                                LogUtil.d("PushAgent", "mContext is null");
+                                return;
+                            }
+                            // onRegistered方法的参数registrationId即是device_token
+                            String pushConfigPath = String.format("%s/%s", FileUtil.basePath(mContext), URLs.PUSH_CONFIG_FILENAME);
+                            JSONObject pushJSON = FileUtil.readConfigFile(pushConfigPath);
+                            pushJSON.put("push_valid", false);
+                            pushJSON.put("push_device_token", registrationId);
+                            FileUtil.writeFile(pushConfigPath, pushJSON.toString());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+            }
+        });
+        mPushAgent.onAppStart();
+
+        mPushAgent.setNotificationClickHandler(handler);
+
+        mPushAgent.setPushCheck(true);
+    }
+
+    UmengNotificationClickHandler handler = new UmengNotificationClickHandler() {
+        @Override
+        public void dealWithCustomAction(Context context, UMessage uMessage) {
+            super.dealWithCustomAction(context, uMessage);
+            try {
+                String pushMessageConfigPath = String.format("%s/%s", FileUtil.basePath(mContext), URLs.PUSH_MESSAGE_FILENAME);
+                JSONObject jsonObject = new JSONObject(uMessage.custom);
+                FileUtil.writeFile(pushMessageConfigPath, jsonObject.toString());
+                Intent intent;
+                if ((mCurrentActivity == null)) {
+                    intent = new Intent (mContext, com.intfocus.yh_android.LoginActivity.class);
+                }
+                else {
+                    String activityName = mCurrentActivity.getClass().getSimpleName();
+                    intent = new Intent (mContext,DashboardActivity.class);
+                    if (activityName.equals("LoginActivity")) {
+                        return;
+                    }
+                    ActivityCollector.finishAll();
+                    if (activityName.equals("GuideActivity")) {
+                        intent = new Intent (mContext,LoginActivity.class);
+                    }
+                    else if (activityName.equals("DashboardActivity")) {
+                        mCurrentActivity.finish();
+                    }
+                }
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    };
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     @Override
     public void onTerminate() {
         super.onTerminate();

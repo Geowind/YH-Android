@@ -4,6 +4,10 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.telephony.TelephonyManager;
+<<<<<<< HEAD
+=======
+import android.util.Log;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,7 +37,11 @@ public class HttpUtil {
      */
     //@throws UnsupportedEncodingException
     public static Map<String, String> httpGet(String urlString, Map<String, String> headers) {
+<<<<<<< HEAD
         LogUtil.d("GET", urlString);
+=======
+//        LogUtil.d("GET", urlString);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         Map<String, String> retMap = new HashMap<>();
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(3, TimeUnit.SECONDS)
@@ -103,6 +111,10 @@ public class HttpUtil {
     //@throws JSONException
     public static Map<String, String> httpPost(String urlString, Map params){
         LogUtil.d("POST", urlString);
+<<<<<<< HEAD
+=======
+        Log.i("POST",urlString);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         Map<String, String> retMap = new HashMap<>();
         OkHttpClient client = new OkHttpClient.Builder()
                 .connectTimeout(3, TimeUnit.SECONDS)
@@ -220,12 +232,23 @@ public class HttpUtil {
                 retMap.put(responseHeaders.name(i), responseHeaders.value(i));
                 LogUtil.d("HEADER", String.format("Key : %s, Value: %s", responseHeaders.name(i),
                     responseHeaders.value(i)));
+<<<<<<< HEAD
+=======
+                Log.d("header", responseHeaders.name(i)+responseHeaders.value(i));
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             }
             retMap.put("code", String.format("%d", response.code()));
             retMap.put("body", response.body().string());
 
+<<<<<<< HEAD
             LogUtil.d("code", retMap.get("code"));
             LogUtil.d("responseBody", retMap.get("body"));
+=======
+//            LogUtil.d("code", retMap.get("code"));
+//            LogUtil.d("responseBody", retMap.get("body"));
+            Log.d("code", retMap.get("code"));
+            Log.d("responseBody", retMap.get("body"));
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         } catch (UnknownHostException e) {
             if(e != null && e.getMessage() != null) {
                 LogUtil.d("UnknownHostException2", e.getMessage());
@@ -310,7 +333,11 @@ public class HttpUtil {
     /**
      * Check if there is any connectivity to a Wifi network
      * @param context
+<<<<<<< HEAD
      * @param type
+=======
+//     * @param type
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @return
      */
     public static boolean isConnectedWifi(Context context){
@@ -321,7 +348,11 @@ public class HttpUtil {
     /**
      * Check if there is any connectivity to a mobile network
      * @param context
+<<<<<<< HEAD
      * @param type
+=======
+//     * @param type
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @return
      */
     public static boolean isConnectedMobile(Context context){

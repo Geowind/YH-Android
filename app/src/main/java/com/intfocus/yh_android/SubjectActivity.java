@@ -4,21 +4,28 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
+<<<<<<< HEAD
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.graphics.Picture;
 import android.graphics.Rect;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
+<<<<<<< HEAD
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
+=======
+import android.util.Log;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.JavascriptInterface;
@@ -26,6 +33,7 @@ import android.webkit.WebSettings;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+<<<<<<< HEAD
 import android.widget.Toast;
 
 import com.android.ddmlib.AdbCommandRejectedException;
@@ -33,15 +41,23 @@ import com.android.ddmlib.AndroidDebugBridge;
 import com.android.ddmlib.IDevice;
 import com.android.ddmlib.RawImage;
 import com.android.ddmlib.TimeoutException;
+=======
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
 import com.intfocus.yh_android.util.ApiHelper;
 import com.intfocus.yh_android.util.FileUtil;
+<<<<<<< HEAD
+=======
+import com.intfocus.yh_android.util.OtherUtil;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import com.intfocus.yh_android.util.URLs;
 import com.joanzapata.pdfview.PDFView;
 import com.joanzapata.pdfview.listener.OnErrorOccurredListener;
 import com.joanzapata.pdfview.listener.OnLoadCompleteListener;
 import com.joanzapata.pdfview.listener.OnPageChangeListener;
+<<<<<<< HEAD
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
@@ -57,6 +73,17 @@ import java.util.ArrayList;
 import java.util.List;
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 import static java.lang.String.format;
 
@@ -69,6 +96,10 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
     private int groupID, objectID, objectType;
     private String userNum;
     private RelativeLayout bannerView;
+<<<<<<< HEAD
+=======
+    private Context context;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
     @Override
     @SuppressLint("SetJavaScriptEnabled")
@@ -76,7 +107,11 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subject);
         mMyApp.setCurrentActivity(this);
+<<<<<<< HEAD
 
+=======
+        context = this;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         /*
          * JSON Data
          */
@@ -90,9 +125,15 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
         }
 
         ImageView bannerComment = (ImageView) findViewById(R.id.bannerComment);
+<<<<<<< HEAD
         bannerComment.setVisibility(URLs.kSubjectComment ? View.VISIBLE : View.GONE);
         ImageView bannerShare = (ImageView) findViewById(R.id.bannerShare);
         bannerShare.setVisibility(URLs.kSubjectShare ? View.VISIBLE : View.GONE);
+=======
+        bannerComment.setVisibility(URLs.kSubjectDisplayComment ? View.VISIBLE : View.GONE);
+        ImageView bannerShare = (ImageView) findViewById(R.id.bannerShare);
+        bannerShare.setVisibility(URLs.kSubjectDisplayShare ? View.VISIBLE : View.GONE);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         ImageView bannerSearch = (ImageView) findViewById(R.id.bannerSearch);
         bannerSearch.setVisibility(View.GONE);
 
@@ -153,6 +194,7 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
 
     protected void displayBannerTitleAndSearchIcon() {
         runOnUiThread(new Runnable() {
+<<<<<<< HEAD
             @Override public void run() {
                 ImageView bannerSearch = (ImageView) findViewById(R.id.bannerSearch);
                 if (!URLs.kSubjectComment && !URLs.kSubjectShare) {
@@ -160,6 +202,18 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
                     params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
                     bannerSearch.setLayoutParams(params);
                 }
+=======
+            @Override
+            public void run() {
+                ImageView bannerSearch = (ImageView) findViewById(R.id.bannerSearch);
+
+                if (!URLs.kSubjectDisplayComment && !URLs.kSubjectDisplayShare) {
+                    RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(OtherUtil.dip2px(context,50), RelativeLayout.LayoutParams.MATCH_PARENT);
+                    params.addRule(RelativeLayout.ALIGN_PARENT_RIGHT, RelativeLayout.TRUE);
+                    bannerSearch.setLayoutParams(params);
+                }
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                 bannerSearch.setVisibility(View.VISIBLE);
 
                 String selectedItem = FileUtil.reportSelectedItem(mContext, String.format("%d", groupID), templateID, reportID);
@@ -176,6 +230,10 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
             }
         });
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     /**
      * PDFView OnPageChangeListener CallBack
      *
@@ -244,11 +302,15 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
 
+<<<<<<< HEAD
         mWebView.post(new Runnable() {
             @Override public void run() {
                 loadHtml();
             }
         });
+=======
+        loadHtml();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     private void loadHtml() {
@@ -259,6 +321,10 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
             // format: /mobile/report/:report_id/group/:group_id
             templateID = TextUtils.split(link, "/")[6];
             reportID = TextUtils.split(link, "/")[8];
+<<<<<<< HEAD
+=======
+            Log.i("templateID",templateID+":"+reportID);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             String urlPath = format(link.replace("%@", "%d"), groupID);
             urlString = String.format("%s%s", URLs.kBaseUrl, urlPath);
             webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
@@ -325,6 +391,10 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
             } else {
                 toast("加载PDF失败");
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         }
     };
 
@@ -356,6 +426,7 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
      * 分享截图至微信
      */
     public void actionShare2Weixin(View v) {
+<<<<<<< HEAD
         String filePath = FileUtil.basePath(mContext) + "/" + "Cached" + "/" + "timestmap.png";
 
         mWebView.setDrawingCacheEnabled(true);
@@ -407,6 +478,9 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get( this ).onActivityResult( requestCode, resultCode, data);
+=======
+        Log.i("actionShare2Weixin", "pending");
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     /*
@@ -470,6 +544,10 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
                     e.printStackTrace();
                 }
             }
+<<<<<<< HEAD
+=======
+            loadHtml();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
             return null;
         }
@@ -477,8 +555,12 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
+<<<<<<< HEAD
 
             loadHtml();
+=======
+            // Call onRefreshComplete when the list has been refreshed. 如果没有下面的函数那么刷新将不会停
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             pullToRefreshWebView.onRefreshComplete();
         }
     }
@@ -576,8 +658,14 @@ public class SubjectActivity extends BaseActivity implements OnPageChangeListene
         }
     }
 
+<<<<<<< HEAD
     public int dip2px( float dpValue) {
         final float scale = mContext.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
+=======
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 }

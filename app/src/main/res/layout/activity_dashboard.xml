@@ -13,6 +13,17 @@
         android:background="@color/actionBar">
 
         <ImageView
+<<<<<<< HEAD
+=======
+            android:id="@+id/bannerCodeScan"
+            style="@style/BannerLeftButton"
+            android:src="@drawable/banner_scan"
+            android:layout_marginTop="2dp"
+            android:layout_alignBottom="@+id/colorViewLayout"
+            android:onClick="launchBarCodeScannerActivity" />
+
+        <ImageView
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             android:id="@+id/bannerLogo"
             android:src="@drawable/banner_logo"
             android:layout_width="wrap_content"
@@ -22,7 +33,11 @@
             android:layout_centerInParent="true" />
 
         <ImageView
+<<<<<<< HEAD
             android:id="@+id/bannerSetting"
+=======
+            android:id="@+id/imgSetting"
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             android:src="@drawable/banner_setting"
             style="@style/BannerRightButton"
             android:layout_marginTop="0dp"
@@ -69,6 +84,7 @@
         android:background="@color/white"
         android:orientation="horizontal">
 
+<<<<<<< HEAD
         <com.intfocus.yh_android.TabView
             android:id="@+id/tabKPI"
             style="@style/ToolBarTab"
@@ -106,6 +122,89 @@
         android:layout_height="match_parent"
         android:layout_above="@id/toolBar"
         android:layout_below="@id/actionBar" />
+=======
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.intfocus.yh_android.TabView
+                android:id="@+id/tabKPI"
+                style="@style/ToolBarTab"
+                app:active_src="@drawable/tab_kpi_s"
+                app:src="@drawable/tab_kpi"
+                app:text="@string/text_dashboard" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.intfocus.yh_android.TabView
+                android:id="@+id/tabAnalyse"
+                style="@style/ToolBarTab"
+                app:active_src="@drawable/tab_analysis_s"
+                app:src="@drawable/tab_analysis"
+                app:text="@string/text_analysis" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.intfocus.yh_android.TabView
+                android:id="@+id/tabApp"
+                style="@style/ToolBarTab"
+                app:active_src="@drawable/tab_app_s"
+                app:src="@drawable/tab_app"
+                app:text="@string/text_app" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.intfocus.yh_android.TabView
+                android:id="@+id/tabMessage"
+                style="@style/ToolBarTab"
+                app:active_src="@drawable/tab_message_s"
+                app:src="@drawable/tab_message"
+                app:text="@string/text_message" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_above="@id/toolBar"
+        android:layout_below="@id/actionBar">
+        <WebView
+            android:id="@+id/browserAd"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:scrollbars="none"
+            android:visibility="gone"/>
+        <com.handmark.pulltorefresh.library.PullToRefreshWebView
+            android:id="@+id/browser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+    </LinearLayout>
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
     <View
         android:layout_width="match_parent"

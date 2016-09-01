@@ -27,6 +27,7 @@
             style="@style/BannerTitle" />
 
         <ImageView
+<<<<<<< HEAD
             android:id="@+id/bannerSearch"
             android:src="@drawable/banner_search"
             style="@style/BannerButton"
@@ -36,16 +37,33 @@
             android:onClick="actionLaunchReportSelectorActivity" />
 
         <ImageView
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             android:id="@+id/bannerShare"
             android:src="@drawable/banner_share"
             style="@style/BannerButton"
             android:padding="12dp"
+<<<<<<< HEAD
             android:layout_marginLeft="-7dp"
             android:layout_marginRight="-7dp"
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             android:layout_toLeftOf="@+id/bannerComment"
             android:onClick="actionShare2Weixin" />
 
         <ImageView
+<<<<<<< HEAD
+=======
+            android:id="@+id/bannerSearch"
+            android:src="@drawable/banner_search"
+            style="@style/BannerButton"
+            android:padding="12dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_toLeftOf="@+id/bannerShare"
+            android:onClick="actionLaunchReportSelectorActivity" />
+
+        <ImageView
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             android:id="@+id/bannerComment"
             style="@style/BannerRightButton"
             android:src="@drawable/banner_comment"

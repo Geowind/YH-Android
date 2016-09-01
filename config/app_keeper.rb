@@ -43,6 +43,7 @@ def xml_meta_data_sub(content, doc, key, value)
 end
 
 def xml_string_sub(content, doc, key, value)
+<<<<<<< HEAD
   meta_datas = doc.xpath(%(//string[@name='#{key}']))
   if meta_datas && meta_datas.first
     meta_data_value = meta_datas.first.text
@@ -56,6 +57,14 @@ end
 
 slop_opts = Slop.parse do |o|
   o.string '-a', '--app', 'current app'
+=======
+  meta_data_value = doc.xpath(%(//string[@name='#{key}'])).first.text
+  content.sub(meta_data_value, value)
+end
+
+slop_opts = Slop.parse do |o|
+  o.string '-a', '--app', 'current app', default: 'yonghui'
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
   o.bool '-g', '--gradle', 'bundle.gradle', default: false
   o.bool '-m', '--mipmap', 'update mipmap', default: false
   o.bool '-x', '--manifest', 'AndroidManifest.xml', default: false
@@ -75,10 +84,16 @@ slop_opts = Slop.parse do |o|
   end
 end
 
+<<<<<<< HEAD
 current_app = slop_opts[:app] || `cat .current-app`.strip
 bundle_display_hash = {
   yonghui: '永辉生意人',
   yonghuitest: '永辉应用(测试)',
+=======
+current_app = slop_opts[:app]
+bundle_display_hash = {
+  yonghui: '永辉生意人',
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
   qiyoutong: '企邮通',
   shengyiplus: '生意+'
 }
@@ -124,7 +139,13 @@ if slop_opts[:mipmap]
   puts %(- done: loading zip)
   `cp -f config/Assets/loading-#{current_app}.zip app/src/main/assets/loading.zip`
   puts %(- done: banner_logo)
+<<<<<<< HEAD
   `cp -f config/Assets/drawable-#{current_app}/*.png app/src/main/res/drawable/`
+=======
+  `cp -f config/Assets/banner-logo-#{current_app}.png app/src/main/res/drawable/banner_logo.png`
+  puts %(- done: banner_setting)
+  `cp -f config/Assets/banner-setting-#{current_app}.png app/src/main/res/drawable/banner_setting.png`
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 end
 
 #
@@ -169,7 +190,10 @@ if slop_opts[:res]
   manifest_nokogiri = Nokogiri.XML(strings_content)
   strings_content = xml_string_sub(strings_content, manifest_nokogiri, 'app_name', current_app_name)
   strings_content = xml_string_sub(strings_content, manifest_nokogiri, 'title_activity_main', current_app_name)
+<<<<<<< HEAD
   strings_content = xml_string_sub(strings_content, manifest_nokogiri, 'login_slogan_text', Settings.slogan_text)
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
   puts %(- done: res/strings.xml: #{current_app_name})
   File.open(strings_xml_path, 'w:utf-8') do |file|
@@ -224,6 +248,7 @@ if slop_opts[:java]
         public final static String kWXAppId      = "#{Settings.umeng_weixin.android.app_id}";
         public final static String kWXAppSecret  = "#{Settings.umeng_weixin.android.app_secret}";
 
+<<<<<<< HEAD
         public final static boolean kDropMenuScan     = #{Settings.display_status.drop_menu_scan == 1 ? 'true' : 'false'};
         public final static boolean kDropMenuSearch   = #{Settings.display_status.drop_menu_search == 1 ? 'true' : 'false'};
         public final static boolean kDropMenuVoice    = #{Settings.display_status.drop_menu_voice == 1 ? 'true' : 'false'};
@@ -237,6 +262,16 @@ if slop_opts[:java]
         
         public final static boolean kSubjectComment = #{Settings.display_status.subject_comment == 1 ? 'true' : 'false'};
         public final static boolean kSubjectShare   = #{Settings.display_status.subject_share == 1 ? 'true' : 'false'};
+=======
+        public final static boolean kDashboardTabBarDisplay        = #{Settings.display_status.tab_bar == 1 ? 'true' : 'false'};
+        public final static boolean kDashboardTabBarDisplayKPI     = #{Settings.display_status.kpi == 1 ? 'true' : 'false'};
+        public final static boolean kDashboardTabBarDisplayAnalyse = #{Settings.display_status.analyse == 1 ? 'true' : 'false'};
+        public final static boolean kDashboardTabBarDisplayApp     = #{Settings.display_status.app == 1 ? 'true' : 'false'};
+        public final static boolean kDashboardTabBarDisplayMessage = #{Settings.display_status.message == 1 ? 'true' : 'false'};
+        public final static boolean kDashboardDisplayScanCode      = #{Settings.display_status.scan_code == 1 ? 'true' : 'false'};
+        public final static boolean kSubjectDisplayComment         = #{Settings.display_status.comment == 1 ? 'true' : 'false'};
+        public final static boolean kSubjectDisplayShare           = #{Settings.display_status.share == 1 ? 'true' : 'false'};
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
       }
       EOF
   end
@@ -265,6 +300,7 @@ end
 if slop_opts[:pgyer]
   response = `curl --silent -F "file=@#{apk_path}" -F "uKey=#{Settings.pgyer.user_key}" -F "_api_key=#{Settings.pgyer.api_key}" http://www.pgyer.com/apiv1/app/upload`
 
+<<<<<<< HEAD
   begin
     hash = JSON.parse(response).deep_symbolize_keys[:data]
     puts %(- done: upload apk(#{hash[:appFileSize].to_i.to_s(:human_size)}) to #pgyer#\n\t#{hash[:appName]}\n\t#{hash[:appIdentifier]}\n\t#{hash[:appVersion]}(#{hash[:appVersionNo]})\n\t#{hash[:appQRCodeURL]})
@@ -272,4 +308,8 @@ if slop_opts[:pgyer]
     puts response.inspect
     puts e.message
   end
+=======
+  hash = JSON.parse(response).deep_symbolize_keys[:data]
+  puts %(- done: upload apk(#{hash[:appFileSize].to_i.to_s(:human_size)}) to #pgyer#\n\t#{hash[:appName]}\n\t#{hash[:appIdentifier]}\n\t#{hash[:appVersion]}(#{hash[:appVersionNo]})\n\t#{hash[:appQRCodeURL]})
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 end

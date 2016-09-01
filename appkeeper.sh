@@ -7,7 +7,11 @@
 ##############################################################################
 
 case "$1" in
+<<<<<<< HEAD
   yonghui|shengyiplus|qiyoutong|yonghuitest|test)
+=======
+  yonghui|shengyiplus|qiyoutong|test)
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     # bundle exec ruby config/app_keeper.rb --app=shengyiplus --gradle --mipmap --manifest --res --java --apk --pgyer
     bundle exec ruby config/app_keeper.rb --app="$1" --gradle --mipmap --manifest --res --java
   ;;

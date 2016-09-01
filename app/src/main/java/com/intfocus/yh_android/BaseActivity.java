@@ -20,7 +20,10 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.PowerManager;
 import android.text.TextUtils;
+<<<<<<< HEAD
 import android.util.DisplayMetrics;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.JavascriptInterface;
@@ -30,6 +33,10 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.Toast;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import com.handmark.pulltorefresh.library.ILoadingLayout;
 import com.handmark.pulltorefresh.library.PullToRefreshBase;
 import com.handmark.pulltorefresh.library.PullToRefreshWebView;
@@ -43,8 +50,15 @@ import com.pgyersdk.javabean.AppBean;
 import com.pgyersdk.update.PgyUpdateManager;
 import com.pgyersdk.update.UpdateManagerListener;
 import com.squareup.leakcanary.RefWatcher;
+<<<<<<< HEAD
 import com.umeng.message.IUmengRegisterCallback;
 import com.umeng.message.PushAgent;
+=======
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -57,8 +71,11 @@ import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+<<<<<<< HEAD
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 /**
  * Created by lijunjie on 16/1/14.
@@ -79,17 +96,23 @@ public class BaseActivity extends Activity {
     String urlStringForLoading;
     JSONObject logParams = new JSONObject();
     Context mContext;
+<<<<<<< HEAD
     int displayDpi; //屏幕密度
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
     @Override
     @SuppressLint("SetJavaScriptEnabled")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+<<<<<<< HEAD
         //获取当前设备屏幕密度
         DisplayMetrics dm = getResources().getDisplayMetrics();
         displayDpi = dm.densityDpi;
 
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         mMyApp = (YHApplication)this.getApplicationContext();
         mContext = BaseActivity.this;
         sharedPath = FileUtil.sharedPath(mContext);
@@ -116,6 +139,7 @@ public class BaseActivity extends Activity {
         RefWatcher refWatcher = YHApplication.getRefWatcher(mContext);
         refWatcher.watch(this);
 
+<<<<<<< HEAD
          /*
           * 友盟消息推送
           */
@@ -148,6 +172,46 @@ public class BaseActivity extends Activity {
             }
         });
         mPushAgent.onAppStart();
+=======
+//         /*
+//          * 友盟消息推送
+//          */
+//        PushAgent mPushAgent = PushAgent.getInstance(mContext);
+//        //开启推送并设置注册的回调处理
+//        mPushAgent.enable(new IUmengRegisterCallback() {
+//            @Override
+//            public void onRegistered(final String registrationId) {
+//                new Handler().post(new Runnable() {
+//                    @Override
+//                    public void run() {
+//                        try {
+//                            if(mContext == null) {
+////                                LogUtil.d("PushAgent", "mContext is null");
+//                                Log.d("PushAgent", "mContext is null");
+//                                return;
+//                            }
+//                            // onRegistered方法的参数registrationId即是device_token
+//                            String pushConfigPath = String.format("%s/%s", FileUtil.basePath(mContext), URLs.PUSH_CONFIG_FILENAME);
+//                            JSONObject pushJSON = FileUtil.readConfigFile(pushConfigPath);
+//                            pushJSON.put("push_valid", false);
+//                            pushJSON.put("push_device_token", registrationId);
+//                            Log.d("device_token",registrationId);
+//                            FileUtil.writeFile(pushConfigPath, pushJSON.toString());
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        } catch (IOException e) {
+//                            e.printStackTrace();
+//                        }
+//                    }
+//                });
+//            }
+//        });
+//        mPushAgent.onAppStart();
+//        String device_token = UmengRegistrar.getRegistrationId(mContext);
+//        Log.i("device_token",device_token);
+        ActivityCollector.addActivity(this);
+        ActivityCollector.printActivity();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     protected void onDestroy() {
@@ -155,6 +219,10 @@ public class BaseActivity extends Activity {
         fixInputMethodManager();
         mMyApp = null;
         super.onDestroy();
+<<<<<<< HEAD
+=======
+        ActivityCollector.removeActivity(this);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     private void clearReferences(){
@@ -254,6 +322,7 @@ public class BaseActivity extends Activity {
         }
 
         // 刷新监听事件
+<<<<<<< HEAD
         pullToRefreshWebView.setOnRefreshListener(
             new PullToRefreshBase.OnRefreshListener<android.webkit.WebView>() {
                 @Override
@@ -271,6 +340,18 @@ public class BaseActivity extends Activity {
     public static int dip2px(Context context, float dpValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dpValue * scale + 0.5f);
+=======
+        pullToRefreshWebView.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<android.webkit.WebView>() {
+            @Override
+            public void onRefresh(PullToRefreshBase<android.webkit.WebView> refreshView) {
+                new pullToRefreshTask().execute();
+
+                SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                String label = simpleDateFormat.format(System.currentTimeMillis());
+                refreshView.getLoadingLayoutProxy().setLastUpdatedLabel(label);
+            }
+        });
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     private class pullToRefreshTask extends AsyncTask<Void, Void, Void> {
@@ -365,12 +446,17 @@ public class BaseActivity extends Activity {
         }
 
         private void showWebViewForWithoutNetwork() {
+<<<<<<< HEAD
             mWebView.post(new Runnable() {
                 @Override public void run() {
                     String urlStringForLoading = loadingPath("400");
                     mWebView.loadUrl(urlStringForLoading);
                 }
             });
+=======
+            String urlStringForLoading = loadingPath("400");
+            mWebView.loadUrl(urlStringForLoading);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         }
 
         private void showDialogForDeviceForbided() {
@@ -387,6 +473,7 @@ public class BaseActivity extends Activity {
                             JSONObject configJSON = new JSONObject();
                             configJSON.put("is_login", false);
 
+<<<<<<< HEAD
                             String userConfigPath = String.format("%s/%s", FileUtil.basePath(mContext), URLs.USER_CONFIG_FILENAME);
                             JSONObject userJSON = FileUtil.readConfigFile(userConfigPath);
 
@@ -395,6 +482,16 @@ public class BaseActivity extends Activity {
 
                             String settingsConfigPath = FileUtil.dirPath(mContext, URLs.CONFIG_DIRNAME, URLs.SETTINGS_CONFIG_FILENAME);
                             FileUtil.writeFile(settingsConfigPath, userJSON.toString());
+=======
+                                String userConfigPath = String.format("%s/%s", FileUtil.basePath(mContext), URLs.USER_CONFIG_FILENAME);
+                                JSONObject userJSON = FileUtil.readConfigFile(userConfigPath);
+
+                                userJSON = ApiHelper.merge(userJSON, configJSON);
+                                FileUtil.writeFile(userConfigPath, userJSON.toString());
+
+                                String settingsConfigPath = FileUtil.dirPath(mContext, URLs.CONFIG_DIRNAME, URLs.SETTINGS_CONFIG_FILENAME);
+                                FileUtil.writeFile(settingsConfigPath, userJSON.toString());
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                         } catch (JSONException e) {
                             e.printStackTrace();
                         } catch (IOException e) {
@@ -478,12 +575,17 @@ public class BaseActivity extends Activity {
         }
 
         private void showWebViewForWithoutNetwork() {
+<<<<<<< HEAD
             mWebView.post(new Runnable() {
                 @Override public void run() {
                     String urlStringForLoading = loadingPath("400");
                     mWebView.loadUrl(urlStringForLoading);
                 }
             });
+=======
+            String urlStringForLoading = loadingPath("400");
+            mWebView.loadUrl(urlStringForLoading);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         }
 
         @Override
@@ -507,7 +609,16 @@ public class BaseActivity extends Activity {
                     break;
                 case 400:
                 case 408:
+<<<<<<< HEAD
                     showWebViewForWithoutNetwork();
+=======
+                    weakActivity.get().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            showWebViewForWithoutNetwork();
+                        }
+                    });
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                     break;
                 default:
                     String msg = String.format("访问服务器失败（%d)", message.what);
@@ -521,11 +632,16 @@ public class BaseActivity extends Activity {
         @Override
         public void run() {
             try {
+<<<<<<< HEAD
                 String action = logParams.getString("action");
                 if(action == null) {
                     return;
                 }
                 if (!action.contains("登录") && !action.equals("解屏") && !action.equals("点击/主页面/浏览器")) {
+=======
+                if (!logParams.getString("action").contains("登录") &&
+                    !logParams.getString("action").equals("解屏")) {
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                     return;
                 }
 
@@ -567,6 +683,24 @@ public class BaseActivity extends Activity {
         }
     }
 
+<<<<<<< HEAD
+=======
+    final String currentUIVersion() {
+        try {
+            String betaConfigPath = FileUtil.dirPath(mContext, URLs.CONFIG_DIRNAME, URLs.BETA_CONFIG_FILENAME);
+            JSONObject betaJSON = new JSONObject();
+            if(new File(betaConfigPath).exists()) {
+                betaJSON = FileUtil.readConfigFile(betaConfigPath);
+            }
+            return betaJSON.has("new_ui") && betaJSON.getBoolean("new_ui") ? "v2" : "v1";
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return "v1";
+    }
+
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     /*
      * 检测版本更新
         {
@@ -739,6 +873,10 @@ public class BaseActivity extends Activity {
         checkAssetUpdated(shouldReloadUIThread, "images", true);
         checkAssetUpdated(shouldReloadUIThread, "stylesheets", true);
         checkAssetUpdated(shouldReloadUIThread, "javascripts", true);
+<<<<<<< HEAD
+=======
+        checkAssetUpdated(shouldReloadUIThread, "advertisement", false);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     private boolean checkAssetUpdated(boolean shouldReloadUIThread, String assetName, boolean isInAssets) {
@@ -771,12 +909,16 @@ public class BaseActivity extends Activity {
     }
 
     protected void toast(String info) {
+<<<<<<< HEAD
         try {
             Toast.makeText(mContext, info, Toast.LENGTH_SHORT).show();
         }
         catch(Exception e) {
             e.printStackTrace();
         }
+=======
+        Toast.makeText(mContext, info, Toast.LENGTH_SHORT).show();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     }
 
     class DownloadAssetsTask extends AsyncTask<String, Integer, String> {

@@ -3,12 +3,22 @@ package com.intfocus.yh_android;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import java.util.ArrayList;
 import java.util.List;
+=======
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import me.dm7.barcodescanner.zbar.Result;
 import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
@@ -82,4 +92,12 @@ public class BarCodeScannerActivity extends BaseActivity implements ZBarScannerV
     public void dismissActivity(View v) {
       BarCodeScannerActivity.this.onBackPressed();
     };
+<<<<<<< HEAD
+=======
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 }

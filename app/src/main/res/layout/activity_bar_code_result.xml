@@ -30,6 +30,7 @@
             android:id="@+id/bannerSearch"
             android:src="@drawable/banner_search"
             style="@style/BannerButton"
+<<<<<<< HEAD
             android:paddingLeft="12dp"
             android:paddingRight="12dp"
             android:paddingTop="16dp"
@@ -37,6 +38,13 @@
             android:layout_alignBottom="@+id/colorViewLayout"
             android:layout_alignParentRight="true"
             android:onClick="actionLaunchStoreSelectorActivity" />
+=======
+            android:padding="12dp"
+            android:layout_marginLeft="-10dp"
+            android:layout_alignBottom="@+id/colorViewLayout"
+            android:layout_alignParentRight="true"
+            android:onClick="actionLaunchReportSelectorActivity" />
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
         <RelativeLayout
             android:id="@+id/colorViewLayout"

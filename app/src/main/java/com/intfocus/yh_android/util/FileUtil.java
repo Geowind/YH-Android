@@ -1,9 +1,19 @@
 package com.intfocus.yh_android.util;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.graphics.Bitmap;
 import android.text.TextUtils;
 import android.util.Log;
+=======
+import android.text.TextUtils;
+import android.util.Log;
+
+import org.apache.commons.io.FileUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -15,6 +25,7 @@ import java.io.InputStreamReader;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+<<<<<<< HEAD
 import java.util.Iterator;
 import java.util.StringTokenizer;
 import java.util.zip.ZipEntry;
@@ -22,6 +33,11 @@ import java.util.zip.ZipInputStream;
 import org.apache.commons.io.FileUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+import java.util.StringTokenizer;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 public class FileUtil {
     public static String basePath(Context context) {
@@ -377,7 +393,11 @@ public class FileUtil {
 
     /**
      * 读取 assets 文件内容
+<<<<<<< HEAD
      * @param  filename
+=======
+//     * @param  filename
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @return
      */
     public static String assetsFileContent(Context mContext, String assetName) {
@@ -402,18 +422,44 @@ public class FileUtil {
 
     /**
      * 更新服务器商品条形码信息
+<<<<<<< HEAD
      * @param  服务器响应内容
+=======
+//     * @param  服务器响应内容
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
      * @return
      */
     public static void barCodeScanResult(Context mContext, String responseString) {
         try {
             String javascriptPath = FileUtil.sharedPath(mContext) + "/BarCodeScan/assets/javascripts/bar_code_data.js";
+<<<<<<< HEAD
             String javascriptContent = new StringBuilder()
                 .append("(function() {")
                 .append("  window.BarCodeData = " + responseString)
                 .append("}).call(this);")
                 .toString();
 
+=======
+//            String javascriptContent = new StringBuilder()
+//                .append("(function() {\n")
+//                .append("  var response = " + responseString + ",\n")
+//                .append("      order_keys = response.order_keys,\n")
+//                .append("      array = [], key, value, i;\n")
+//                .append("  for(i = 0; i < order_keys.length; i ++) {\n")
+//                .append("    key = order_keys[i];\n")
+//                .append("    value = response[key];\n")
+//                .append("    array.push('<tr><td>' + key + '</td><td>' + value + '</td></tr>');\n")
+//                .append("  }\n")
+//                .append("  document.getElementById('result').innerHTML = array.join('');\n")
+//                .append("}).call(this);")
+//                .toString();
+            String javascriptContent = new StringBuilder()
+                    .append("(function() {")
+                    .append("window.BarCodeData = ")
+                    .append(responseString)
+                    .append("}).call(this);")
+                    .toString();
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             Log.i("javascriptContent", javascriptContent);
             FileUtil.writeFile(javascriptPath, javascriptContent);
         } catch(IOException e) {
@@ -499,6 +545,7 @@ public class FileUtil {
     //
     //FileUtil.writeFile(searchItemsPath, json.toString());
 
+<<<<<<< HEAD
     /*
 	 * 保存截屏文件
 	 *
@@ -524,4 +571,6 @@ public class FileUtil {
             Log.e("snapshot", e.toString());
         }
     }
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 }

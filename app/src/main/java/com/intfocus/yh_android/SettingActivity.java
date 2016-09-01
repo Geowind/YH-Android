@@ -16,18 +16,32 @@ import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
+<<<<<<< HEAD
+=======
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import com.intfocus.yh_android.screen_lock.InitPassCodeActivity;
 import com.intfocus.yh_android.util.ApiHelper;
 import com.intfocus.yh_android.util.FileUtil;
 import com.intfocus.yh_android.util.URLs;
 import com.umeng.message.PushAgent;
 import com.umeng.message.UmengRegistrar;
+<<<<<<< HEAD
+=======
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+<<<<<<< HEAD
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 public class SettingActivity extends BaseActivity {
     private TextView mUserID;
@@ -70,8 +84,12 @@ public class SettingActivity extends BaseActivity {
         mLockSwitch.setChecked(FileUtil.checkIsLocked(mContext));
         mCheckAssets.setOnClickListener(mCheckAssetsListener);
         mUISwitch = (Switch) findViewById(R.id.ui_switch);
+<<<<<<< HEAD
 
         mUISwitch.setChecked(URLs.currentUIVersion(mContext).equals("v1"));
+=======
+        mUISwitch.setChecked(currentUIVersion().equals("v2"));
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
         mChangeLock.setOnClickListener(mChangeLockListener);
         mChangePWD.setOnClickListener(mChangePWDListener);
@@ -165,7 +183,11 @@ public class SettingActivity extends BaseActivity {
 
             Intent intent = new Intent();
             intent.setClass(SettingActivity.this, LoginActivity.class);
+<<<<<<< HEAD
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+=======
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
             startActivity(intent);
 
             /*
@@ -178,8 +200,11 @@ public class SettingActivity extends BaseActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+<<<<<<< HEAD
 
             finish();
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         }
     };
 
@@ -333,7 +358,11 @@ public class SettingActivity extends BaseActivity {
                 if(new File(betaConfigPath).exists()) {
                     betaJSON = FileUtil.readConfigFile(betaConfigPath);
                 }
+<<<<<<< HEAD
                 betaJSON.put("old_ui", isChecked);
+=======
+                betaJSON.put("new_ui", isChecked);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
                 FileUtil.writeFile(betaConfigPath, betaJSON.toString());
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -357,4 +386,12 @@ public class SettingActivity extends BaseActivity {
             startActivity(browserIntent);
         }
     };
+<<<<<<< HEAD
+=======
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 }

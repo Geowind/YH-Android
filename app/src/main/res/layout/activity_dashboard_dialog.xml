@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+<<<<<<< HEAD
     android:background="@drawable/banner_popup_background"
+=======
+    android:background="@drawable/bg_dwb"
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     android:orientation="vertical">
 
     <LinearLayout
@@ -31,7 +35,10 @@
     </LinearLayout>
 
     <View
+<<<<<<< HEAD
         android:id="@+id/linearScanSeparator"
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#FFFFFF"
@@ -63,7 +70,10 @@
     </LinearLayout>
 
     <View
+<<<<<<< HEAD
         android:id="@+id/linearVoiceSeparator"
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#FFFFFF"
@@ -95,7 +105,10 @@
     </LinearLayout>
 
     <View
+<<<<<<< HEAD
         android:id="@+id/linearSearchSeparator"
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#FFFFFF"

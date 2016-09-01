@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/guideLayout"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/guideBigTv"
+        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="36sp"
+        android:visibility="gone" />
+    <!--android:textColor="@color/guide_big_tv_color"-->
+
+    <TextView
+        android:layout_below="@+id/guideBigTv"
+        android:id="@+id/guideSmallTv"
+        android:layout_marginTop="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="12sp"
+        android:visibility="gone" />
+    <!--android:textColor="@color/guide_small_tv_color"-->
+
+    <TextView
+        android:id="@+id/guideSmallTv1"
+        android:layout_below="@+id/guideSmallTv"
+        android:layout_marginTop="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="12sp"
+        android:visibility="gone" />
+    <!--android:textColor="@color/guide_small_tv_color"-->
+
+    <ImageView
+        android:layout_below="@+id/guideSmallTv1"
+        android:id="@+id/guideImg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/guideImg1"
+        android:layout_marginTop="130dp"
+        android:layout_width="140dp"
+        android:layout_height="70dp"
+        android:visibility="gone"
+        android:layout_centerHorizontal="true" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="45dp">
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:id="@+id/guideBtn"
+            android:layout_marginLeft="36dp"
+            android:layout_marginRight="36dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:visibility="gone" />
+        <!--android:textColor="#FFFFFF"-->
+        <!--android:text="@string/text_login"-->
+        <!--android:background="@color/guide_big_tv_color"-->
+
+        <TextView
+            android:layout_below="@+id/guideBtn"
+            android:id="@+id/guideClickTv"
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/text_guide_click"
+            android:layout_centerHorizontal="true"
+            android:textSize="14sp" />
+
+        <!--android:textColor="@color/click_text_color"-->
+
+    </RelativeLayout>
+</RelativeLayout>

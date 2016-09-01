@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package org.vudroid.core.codec;
 
 import android.graphics.Bitmap;
@@ -17,3 +18,24 @@ public interface CodecPage
 
     void recycle();
 }
+=======
+package org.vudroid.core.codec;
+
+import android.graphics.Bitmap;
+import android.graphics.RectF;
+
+public interface CodecPage
+{
+    boolean isDecoding();
+
+    void waitForDecode();
+
+    int getWidth();
+
+    int getHeight();
+
+    Bitmap renderBitmap(int width, int height, RectF pageSliceBounds);
+
+    void recycle();
+}
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9

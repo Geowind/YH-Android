@@ -44,9 +44,14 @@
     <style name="ButtonBarButton" />
 
     <style name="ToolBarTab">
+<<<<<<< HEAD
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_weight">1</item>
+=======
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
         <item name="android:layout_gravity">center_vertical</item>
         <item name="src_height">20dp</item>
     </style>
@@ -181,5 +186,16 @@
         <item name="android:layout_marginLeft">28dp</item>
         <item name="android:background">@color/colors4</item>
     </style>
+<<<<<<< HEAD
+=======
+    <style name="MyDialogStyleTop" parent="android:Theme.Dialog">
+        <item name="android:windowFrame">@null</item><!-- 边框 -->
+        <item name="android:windowIsFloating">true</item> <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">false</item><!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item> <!-- 无标题 -->
+        <item name="android:windowBackground">@android:color/transparent</item><!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item><!-- 模糊 -->
+    </style>
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 </resources>

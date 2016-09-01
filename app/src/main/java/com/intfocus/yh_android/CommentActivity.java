@@ -49,7 +49,11 @@ public class CommentActivity extends BaseActivity {
         objectType = intent.getIntExtra("objectType", -1);
 
         mTitle.setText(bannerName);
+<<<<<<< HEAD
         urlString = String.format(URLs.COMMENT_PATH, URLs.kBaseUrl, URLs.currentUIVersion(mContext), objectID, objectType);
+=======
+        urlString = String.format(URLs.COMMENT_PATH, URLs.kBaseUrl, currentUIVersion(), objectID, objectType);
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
         new Thread(mRunnableForDetecting).start();
 
@@ -128,4 +132,12 @@ public class CommentActivity extends BaseActivity {
             }
         }
     }
+<<<<<<< HEAD
+=======
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+    }
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 }

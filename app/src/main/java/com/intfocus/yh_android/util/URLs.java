@@ -1,15 +1,21 @@
 package com.intfocus.yh_android.util;
 
 import android.content.Context;
+<<<<<<< HEAD
 import java.io.File;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.MessageDigest;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+<<<<<<< HEAD
 import org.json.JSONException;
 import org.json.JSONObject;
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
 
 /**
  * api链接，宏
@@ -29,7 +35,11 @@ public class URLs extends PrivateURLs implements Serializable {
     public final static String API_ACTION_LOG_PATH      = "%s/api/v1/android/logger";
 
     public final static String API_PUSH_DEVICE_TOKEN_PATH = "%s/api/v1/device/%s/push_token/%s";
+<<<<<<< HEAD
     public final static String API_BARCODE_SCAN_PATH      = "%s/api/v1/group/%s/role/%s/user/%s/store/%s/barcode_scan?code_info=%s&code_type=%s";
+=======
+    public final static String API_BARCODE_SCAN_PATH      = "%s/api/v1/group/%s/role/%s/user/%s/barcode_scan";
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     public final static String API_ASSETS_PATH            = "%s/api/v1/download/%s.zip";
 
     public final static String KPI_PATH                  = "%s/mobile/%s/group/%s/role/%s/kpi";
@@ -42,6 +52,10 @@ public class URLs extends PrivateURLs implements Serializable {
     public final static String REPORT_DATA_FILENAME      = "group_%s_template_%s_report_%s.js";
 
     public final static String USER_CONFIG_FILENAME      = "user.plist";
+<<<<<<< HEAD
+=======
+    public final static String PUSH_MESSAGE_FILENAME      = "push_message.config";
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     public final static String CONFIG_DIRNAME            = "Configs";
     public final static String SETTINGS_CONFIG_FILENAME  = "setting.plist";
     public final static String BETA_CONFIG_FILENAME      = "beta.plist";
@@ -55,6 +69,13 @@ public class URLs extends PrivateURLs implements Serializable {
     public final static String CURRENT_VERSION_FILENAME  = "current_version.txt";
     public final static String PGYER_VERSION_FILENAME    = "pgyer_version.txt";
 
+<<<<<<< HEAD
+=======
+    public final static String GET_NOTIFICATION = "http://iamjay.name/api/notifications/:%s/list";
+    public final static String POST_NOTIFICATION = "http://iamjay.name/api/notifications/:%s/read/:%s";
+    public final static String POST_BARCODE = "https://yonghui.idata.mobi/api/v1/group/%s/role/%s/user/%s/store/%s/barcode_scan?code_info=%s&code_type=%s";
+
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     public static String storage_base(Context context) {
         //    String path = "";
         //    if(Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
@@ -69,6 +90,7 @@ public class URLs extends PrivateURLs implements Serializable {
         return (new SimpleDateFormat("yyyyMMddKKmmss")).format(new Date());
     }
 
+<<<<<<< HEAD
     /*
      * UI 版本
      */
@@ -86,6 +108,8 @@ public class URLs extends PrivateURLs implements Serializable {
         }
         return "v2";
     }
+=======
+>>>>>>> fa4ffd90cd3f6a0db797ede37e42becda41540e9
     /**
      * 对URL进行格式处理
      *
